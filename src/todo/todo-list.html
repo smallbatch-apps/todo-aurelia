@@ -1,0 +1,17 @@
+<template>
+  <require from="./todo-item"></require>
+
+  <h2>Todo List</h2>
+
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius accusamus, nesciunt perferendis odio nostrum quas, rem maiores assumenda est amet architecto error omnis cupiditate ratione sequi deserunt doloremque rerum! Nostrum.</p>
+
+  <ul class="list-group">
+    <li class="list-group-item" repeat.for="item of todos">
+      <todo-item item.bind="item" save.call="editItem()"></todo-item>
+    </li>
+    <li class="list-group-item">
+      <todo-item create.bind="true" save.call="createItem(todo)"  class="list-group-item"></todo-item>
+    </li>
+  </ul>
+
+</template>

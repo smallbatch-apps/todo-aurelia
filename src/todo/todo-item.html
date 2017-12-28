@@ -1,0 +1,22 @@
+<template>
+  <template if.bind="isEditing">
+    <div class="form-group">
+      <input type="text" value.bind="item.title" class="form-control">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-info" click.trigger="saveItem()" if.bind="!create"><i class="fa fa-cloud-upload"></i> Save</button>
+      <button class="btn btn-info" click.trigger="createItem()" if.bind="create"><i class="fa fa-cloud-upload"></i> Save</button>
+      <i class="fa fa-times fa-fw pull-right" click.trigger="isEditing=false"></i>
+    </div>
+  </template>
+  <template if.bind="!isEditing">
+    <template if.bind="create">
+      <button class="btn btn-primary" click.trigger="isEditing=true"><i class="fa fa-plus"></i> Create New</button>
+    </template>
+    <template if.bind="!create">
+      <i class="fa ${ item.checked ? 'fa-check-square-o' : 'fa-square-o' } fa-fw" click.trigger="checkItem()"></i> 
+      <span class="${ item.checked ? 'checked' : '' }">${item.title}</span>
+      <i class="fa fa-pencil fa-fw pull-right edit-link" click.trigger="isEditing=true"></i>
+    </template>
+  </template>
+</template>

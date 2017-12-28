@@ -1,0 +1,19 @@
+<template>
+  <require from="bootstrap/css/bootstrap.css"></require>
+  <require from="font-awesome/css/font-awesome.min.css"></require>
+  <require from="./style.css"></require>
+
+  <div class="container">
+    <h1>Aurelia Todo App</h1>
+
+    <nav class="navbar navbar-default">
+      <ul class="nav navbar-nav">
+        <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+          <a href.bind="row.href">${row.title}</a>
+        </li>
+      </ul>
+    </nav> 
+    
+    <router-view></router-view>
+  </div>
+</template>

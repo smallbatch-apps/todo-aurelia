@@ -1,0 +1,11 @@
+li span.checked {
+  text-decoration: line-through;
+}
+
+li .edit-link {
+  display: none;
+}
+
+li:hover .edit-link {
+  display: inline-block;
+}
