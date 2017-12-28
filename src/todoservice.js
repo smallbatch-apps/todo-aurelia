@@ -5,7 +5,7 @@ import {HttpClient} from 'aurelia-http-client';
 export default class TodoService {
   constructor(http){
     http.configure(instance => {
-      instance.withBaseUrl('http://todo-api.dev/');
+      instance.withBaseUrl('http://todo-api.test/');
     });
     this.http = http;
   }
