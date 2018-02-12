@@ -7,7 +7,6 @@ import {TodoCreated} from '../messages';
 export class TodoItem {
   @bindable item = {checked: false, title: ''};
   @bindable create = false;
-  @bindable dicks;
   @bindable save;
 
   constructor(todoService, ea) {
